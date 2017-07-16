@@ -13,6 +13,8 @@ namespace SamuraiAppCore.Data
         {
             optionsBuilder.UseSqlServer(
                 @"Server = DESKTOP-DVFGEG0\DEV; User Id = sa; Password = 123456; Database = SamuraiDataCore");
+
+
         }
     }
 }
