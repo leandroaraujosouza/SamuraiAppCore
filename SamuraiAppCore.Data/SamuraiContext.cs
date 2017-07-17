@@ -9,11 +9,19 @@ namespace SamuraiAppCore.Data
         public DbSet<Battle> Battles { get; set; }
         public DbSet<Quote> Quotes { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            optionsBuilder.UseSqlServer(
-                @"Server = DESKTOP-DVFGEG0\DEV; User Id = sa; Password = 123456; Database = SamuraiDataCore");
+            modelBuilder.Entity<SamuraiBattle>()
+                .HasKey(e => new {e.BattleId, e.SamuraiId});
 
+            base.OnModelCreating(modelBuilder);
+        }
+
+
+        protected override void OnConfiguring(DbContextOptionsBuilder modelBuilder)
+        {
+            modelBuilder.UseSqlServer(
+                @"Server = DESKTOP-DVFGEG0\DEV; User Id = sa; Password = 123456; Database = SamuraiDataCore");
 
         }
     }
