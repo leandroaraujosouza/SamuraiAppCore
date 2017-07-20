@@ -4,11 +4,11 @@ namespace SamuraiAppCore.Domain.EntityConfiguration
 {
     public class BattleConfiguration : EntityTypeConfiguration<Battle>
     {
-        public override void Map(EntityTypeBuilder<Battle> builder)
+        public override void Map(EntityTypeBuilder<Battle> entity)
         {
-            builder.Property(e => e.Id).IsRequired();
+            entity.Property(e => e.Id).IsRequired();
 
-            builder.HasKey(e => e.Id);
+            entity.HasKey(e => e.Id);
         }
     }
 }
