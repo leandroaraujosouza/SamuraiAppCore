@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SamuraiAppCore.Domain;
+using SamuraiAppCore.Domain.EntityConfiguration;
 
 namespace SamuraiAppCore.Data
 {
@@ -14,6 +15,7 @@ namespace SamuraiAppCore.Data
             modelBuilder.Entity<SamuraiBattle>()
                 .HasKey(e => new {e.BattleId, e.SamuraiId});
 
+            modelBuilder.AddConfiguration(new BattleConfiguration());
             base.OnModelCreating(modelBuilder);
         }
 
