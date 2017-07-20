@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Microsoft.EntityFrameworkCore
+namespace SamuraiAppCore.Domain.EntityConfiguration
 {
     public abstract class EntityTypeConfiguration<TEntity>
         where TEntity : class
